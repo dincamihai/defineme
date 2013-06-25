@@ -17,6 +17,28 @@
 
   </head>
   <body>
-      Define Me
+    {% for row in rows %}
+        <div class="row-fluid">
+            {% for item in row %}
+                <div class="span3">
+                    <a target="_blank" href="{{ item.href }}">
+                        <img alt="{{ item.title }}"
+                             src="{{ item.src }}"
+                             title="{{ item.title }}"/>
+                    </a>
+                  <div>
+                     <div style="text-align:center">
+                         <div>
+                             <a target="_blank" href="{{ item.desc_url }}">{{
+                                 item.desc }}</a>
+                             (see more <a target="_blank" href="{{
+                                 item.desc_href }}">{{ item.desc_categ }}</a>)
+                 </div>
+             </div>
+         </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
   </body>
 </html>
